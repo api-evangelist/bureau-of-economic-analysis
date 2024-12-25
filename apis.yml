@@ -28,7 +28,6 @@ apis:
     properties:
       - type: Documentation
         url: https://www.bea.gov/tools/
-    overlays: []
     aid: bureau-of-economic-analysis-bea:bureau-of-economic-analysis-bea-api
 common:
   - type: Property
