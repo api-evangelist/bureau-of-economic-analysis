@@ -1,10 +1,14 @@
 openapi: 3.1.0
 info:
-  title: BEA API for Data Retrieval
+  title: Bureau of Economic Analysis (BEA) API
   version: 1.0.0
   description: >-
-    API for retrieving economic statistics published by the Bureau of Economic
-    Analysis (BEA).
+    The data API provides programmatic access to BEA published economic
+    statistics using industry-standard methods and procedures. BEA's data API
+    includes methods for retrieving a subset of our statistical data and the
+    meta-data that describes it. The data API and its documentation are for
+    programmers who are familiar with the concepts and techniques of retrieving
+    data from Web Services.
 servers:
   - url: https://apps.bea.gov/api/data
 paths:
