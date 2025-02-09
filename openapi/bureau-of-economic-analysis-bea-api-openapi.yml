@@ -1,0 +1,79 @@
+openapi: 3.1.0
+info:
+  title: BEA API for Data Retrieval
+  version: 1.0.0
+  description: >-
+    API for retrieving economic statistics published by the Bureau of Economic
+    Analysis (BEA).
+servers:
+  - url: https://apps.bea.gov/api/data
+paths:
+  /:
+    get:
+      summary: Retrieve data from BEA API
+      parameters:
+        - name: UserID
+          in: query
+          required: true
+          schema:
+            type: string
+            description: Unique 36-character User ID for API access
+        - name: method
+          in: query
+          required: true
+          schema:
+            type: string
+            enum:
+              - GetDatasetList
+              - GetParameterList
+              - GetParameterValues
+              - GetData
+        - name: DatasetName
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Name of the dataset to retrieve
+        - name: ParameterName
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Specific parameter for the dataset
+        - name: ResultFormat
+          in: query
+          required: false
+          schema:
+            type: string
+            enum:
+              - JSON
+              - XML
+            default: JSON
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: string
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  APIErrorCode:
+                    type: integer
+                  APIErrorDescription:
+                    type: string
+        '429':
+          description: Rate limit exceeded
+          headers:
+            Retry-After:
+              description: Time in seconds to wait before retrying
+              schema:
+                type: integer
