@@ -1,45 +1,55 @@
-aid: bureau-of-economic-analysis-bea
+aid: bureau-of-economic-analysis
 url: >-
-  https://raw.githubusercontent.com/api-search/us-federal-government/main/_apis/bureau-of-economic-analysis/apis.md
-apis:
-  - aid: bureau-of-economic-analysis-bea:bureau-of-economic-analysis-bea-api
-    name: Bureau of Economic Analysis (BEA) API
-    tags:
-      - Federal Government
-      - Economics
-      - Statistics
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    baseURL: https://api.example.com
-    humanURL: https://www.bea.gov/tools/
-    properties:
-      - url: https://www.bea.gov/tools/
-        type: Documentation
-      - type: OpenAPI
-        url: properties/bureau-of-economic-analysis-bea-api-openapi.yml
-    description: >-
-      The data API provides programmatic access to BEA published economic
-      statistics using industry-standard methods and procedures. BEA's data API
-      includes methods for retrieving a subset of our statistical data and the
-      meta-data that describes it. The data API and its documentation are for
-      programmers who are familiar with the concepts and techniques of
-      retrieving data from Web Services.
+  https://raw.githubusercontent.com/api-evangelist/bureau-of-economic-analysis/refs/heads/main/apis.yml
 name: Bureau of Economic Analysis (BEA)
 tags:
   - Federal Government
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-common:
-  - url: https://example.com
-    type: Property
-created: 2024/01/01
-modified: '2025-02-08'
+  - Economics
+  - Statistics
+  - GDP
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+created: '2024-01-01'
+modified: '2026-03-16'
+position: Consumer
 description: >-
   The U.S. Bureau of Economic Analysis is your source of accurate and objective
   data about the nation's economy. BEA's economists produce some of the world's
   most closely watched statistics, including U.S. gross domestic product, better
   known as GDP. We do state and local numbers, too, plus foreign trade and
   investment stats and industry data.
+apis:
+  - aid: bureau-of-economic-analysis:bureau-of-economic-analysis-api
+    name: Bureau of Economic Analysis (BEA) API
+    tags:
+      - Federal Government
+      - Economics
+      - Statistics
+    humanURL: https://www.bea.gov/tools/
+    baseURL: https://apps.bea.gov/api/data
+    properties:
+      - url: https://www.bea.gov/tools/
+        type: Documentation
+      - url: https://apps.bea.gov/API/docs/index.htm
+        type: Reference
+      - type: OpenAPI
+        url: properties/bureau-of-economic-analysis-bea-api-openapi.yml
+    description: >-
+      The BEA data API provides programmatic access to BEA published economic
+      statistics using industry-standard methods and procedures. The API
+      provides methods for retrieving a subset of statistical data and the
+      metadata that describes it.
+common:
+  - type: Portal
+    url: https://www.bea.gov/tools/
+  - type: Documentation
+    url: https://apps.bea.gov/API/docs/index.htm
+  - type: Getting Started
+    url: https://www.bea.gov/tools/faq
+  - type: Website
+    url: https://www.bea.gov/
 maintainers:
-  - FN: API Evangelist
-    url: http://apievangelist.com
-    email: info@apievangelist.com
-specificationVersion: '0.16'
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+specificationVersion: '0.19'
