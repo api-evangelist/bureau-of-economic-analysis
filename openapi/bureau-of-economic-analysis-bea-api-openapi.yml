@@ -14,7 +14,7 @@ servers:
 paths:
   /:
     get:
-      summary: Retrieve data from BEA API
+      summary: Bureau of Economic Analysis Retrieve data from BEA API
       parameters:
         - name: UserID
           in: query
