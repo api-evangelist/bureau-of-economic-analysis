@@ -3,10 +3,10 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/bureau-of-economic-analysis/refs/heads/main/apis.yml
 name: Bureau of Economic Analysis
 tags:
-  - Federal Government
   - Economics
-  - Statistics
+  - Federal Government
   - GDP
+  - Statistics
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
@@ -23,8 +23,8 @@ apis:
   - aid: bureau-of-economic-analysis:bureau-of-economic-analysis-api
     name: Bureau of Economic Analysis (BEA) API
     tags:
-      - Federal Government
       - Economics
+      - Federal Government
       - Statistics
     humanURL: https://www.bea.gov/tools/
     baseURL: https://apps.bea.gov/api/data
