@@ -10,7 +10,7 @@ tags:
   - Statistics
   - Trade
 type: Index
-x-type: government
+kind: government
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-01-01'
@@ -86,7 +86,7 @@ common:
     url: https://www.bea.gov/tools/
   - type: Documentation
     url: https://apps.bea.gov/API/docs/index.htm
-  - type: Getting Started
+  - type: GettingStarted
     url: https://www.bea.gov/tools/faq
   - type: Website
     url: https://www.bea.gov/
