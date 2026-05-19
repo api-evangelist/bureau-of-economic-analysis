@@ -1,0 +1,97 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Bureau of Economic Analysis (BEA) API
+  description: 'Bureau of Economic Analysis (BEA) API. 1 operations. Lead operation: Bureau of Economic Analysis Retrieve
+    data from BEA API. Self-contained Naftiko capability covering one Bureau Of Economic Analysis business surface.'
+  tags:
+  - Bureau Of Economic Analysis
+  - Bureau of Economic Analysis (BEA) API
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    BUREAU_OF_ECONOMIC_ANALYSIS_API_KEY: BUREAU_OF_ECONOMIC_ANALYSIS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: bea
+    baseUri: https://apps.bea.gov/api/data
+    description: Bureau of Economic Analysis (BEA) API business capability. Self-contained, no shared references.
+    resources:
+    - name: root
+      path: /
+      operations:
+      - name: get
+        method: GET
+        description: Bureau of Economic Analysis Retrieve data from BEA API
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: UserID
+          in: query
+          type: string
+          required: true
+        - name: method
+          in: query
+          type: string
+          required: true
+        - name: DatasetName
+          in: query
+          type: string
+        - name: ParameterName
+          in: query
+          type: string
+        - name: ResultFormat
+          in: query
+          type: string
+  exposes:
+  - type: rest
+    namespace: bea-rest
+    port: 8080
+    description: REST adapter for Bureau of Economic Analysis (BEA) API. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1
+      name: root
+      description: REST surface for root.
+      operations:
+      - method: GET
+        name: get
+        description: Bureau of Economic Analysis Retrieve data from BEA API
+        call: bea.get
+        with:
+          UserID: rest.UserID
+          method: rest.method
+          DatasetName: rest.DatasetName
+          ParameterName: rest.ParameterName
+          ResultFormat: rest.ResultFormat
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: bea-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Bureau of Economic Analysis (BEA) API. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: bureau-economic-analysis-retrieve-data
+      description: Bureau of Economic Analysis Retrieve data from BEA API
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: bea.get
+      with:
+        UserID: tools.UserID
+        method: tools.method
+        DatasetName: tools.DatasetName
+        ParameterName: tools.ParameterName
+        ResultFormat: tools.ResultFormat
+      outputParameters:
+      - type: object
+        mapping: $.
