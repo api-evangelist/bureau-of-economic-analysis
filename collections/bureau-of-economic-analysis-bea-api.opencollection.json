@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bureau of Economic Analysis (BEA) API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bureau of Economic Analysis Retrieve data from BEA API",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://apps.bea.gov/api/data/",
+        "params": [
+          {
+            "name": "UserID",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "method",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "DatasetName",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "ParameterName",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "ResultFormat",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Bureau of Economic Analysis Retrieve data from BEA API"
+    }
+  ],
+  "bundled": true
+}

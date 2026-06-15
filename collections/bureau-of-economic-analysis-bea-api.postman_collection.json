@@ -1,0 +1,249 @@
+{
+  "item": [
+    {
+      "id": "682d746f-c975-440e-9028-1e2f4a98f4a2",
+      "name": "Bureau of Economic Analysis Retrieve data from BEA API",
+      "request": {
+        "name": "Bureau of Economic Analysis Retrieve data from BEA API",
+        "description": {},
+        "url": {
+          "path": [
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "UserID",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "method",
+              "value": "<string>",
+              "description": "(Required) "
+            },
+            {
+              "disabled": false,
+              "key": "DatasetName",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "ParameterName",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "ResultFormat",
+              "value": "JSON"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "4dfa212e-c22a-486d-81c8-51af9357c52a",
+          "name": "Successful response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "UserID",
+                  "value": "<string>"
+                },
+                {
+                  "key": "method",
+                  "value": "<string>"
+                },
+                {
+                  "key": "DatasetName",
+                  "value": "<string>"
+                },
+                {
+                  "key": "ParameterName",
+                  "value": "<string>"
+                },
+                {
+                  "key": "ResultFormat",
+                  "value": "JSON"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "c79eacdb-b23d-4227-842c-9efc5b53fea8",
+          "name": "Invalid request parameters",
+          "originalRequest": {
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "UserID",
+                  "value": "<string>"
+                },
+                {
+                  "key": "method",
+                  "value": "<string>"
+                },
+                {
+                  "key": "DatasetName",
+                  "value": "<string>"
+                },
+                {
+                  "key": "ParameterName",
+                  "value": "<string>"
+                },
+                {
+                  "key": "ResultFormat",
+                  "value": "JSON"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"APIErrorCode\": 4619,\n  \"APIErrorDescription\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "0153baec-edfe-4a89-8c45-e39ac4d79c0c",
+          "name": "Rate limit exceeded",
+          "originalRequest": {
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "UserID",
+                  "value": "<string>"
+                },
+                {
+                  "key": "method",
+                  "value": "<string>"
+                },
+                {
+                  "key": "DatasetName",
+                  "value": "<string>"
+                },
+                {
+                  "key": "ParameterName",
+                  "value": "<string>"
+                },
+                {
+                  "key": "ResultFormat",
+                  "value": "JSON"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "disabled": false,
+              "description": "Time in seconds to wait before retrying",
+              "key": "Retry-After",
+              "value": "6500"
+            },
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://apps.bea.gov/api/data",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ee03a7d4-b499-452c-99bd-5f13af3a6942",
+    "name": "Bureau of Economic Analysis (BEA) API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The data API provides programmatic access to BEA published economic statistics using industry-standard methods and procedures. BEA's data API includes methods for retrieving a subset of our statistical data and the meta-data that describes it. The data API and its documentation are for programmers who are familiar with the concepts and techniques of retrieving data from Web Services.",
+      "type": "text/plain"
+    }
+  }
+}
