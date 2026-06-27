@@ -39,7 +39,7 @@ apis:
       - type: OpenAPI
         url: properties/bureau-of-economic-analysis-bea-api-openapi.yml
       - url: https://apps.bea.gov/API/signup/index.cfm
-        type: SignUp
+        type: Signup
     description: >-
       The BEA Data API provides programmatic access to BEA's published economic statistics including GDP, national
       income, personal income, corporate profits, international trade and investment, and industry accounts. Supports
@@ -90,7 +90,7 @@ common:
     url: https://www.bea.gov/tools/faq
   - type: Website
     url: https://www.bea.gov/
-  - type: SignUp
+  - type: Signup
     url: https://apps.bea.gov/API/signup/index.cfm
   - type: Data Visualizations
     url: https://www.bea.gov/itable/
