@@ -1,0 +1,21 @@
+{
+  "repo": "bureau-of-economic-analysis",
+  "feeds": [
+    {
+      "source": "https://apps.bea.gov/rss/rss.xml",
+      "feed_url": "https://apps.bea.gov/rss/rss.xml",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://www.bea.gov/news",
+      "feed_url": "https://www.bea.gov/news/rss/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    }
+  ],
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 59
+}
