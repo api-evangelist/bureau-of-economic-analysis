@@ -78,6 +78,8 @@ apis:
       Gross Domestic Product (GDP) data from the BEA, available quarterly and annually. Includes GDP growth rates, GDP
       by expenditure components, and real vs. nominal GDP measures.
 common:
+  - type: AgenticAccess
+    url: agentic-access/bureau-of-economic-analysis-agentic-access.yml
   - type: DomainSecurity
     url: security/bureau-of-economic-analysis-domain-security.yml
   - type: GitHubOrganization
