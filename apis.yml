@@ -10,7 +10,19 @@ tags:
   - Trade
 type: Index
 kind: government
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/bureau-of-economic-analysis.png
 access: 3rd-Party
 created: '2024-01-01'
 modified: '2026-05-19'
@@ -21,62 +33,43 @@ description: >-
   investment data, and industry-level economic accounts. The BEA Data API provides programmatic access to these economic
   statistics.
 apis:
-  - aid: bureau-of-economic-analysis:bureau-of-economic-analysis-api
-    name: Bureau of Economic Analysis (BEA) Data API
-    tags:
-      - Economics
-      - Federal Government
-      - GDP
-      - National Accounts
-      - Statistics
-    humanURL: https://www.bea.gov/tools/
-    baseURL: https://apps.bea.gov/api/data
-    properties:
-      - url: https://www.bea.gov/tools/
-        type: Documentation
-      - url: https://apps.bea.gov/API/docs/index.htm
-        type: Reference
-      - type: OpenAPI
-        url: properties/bureau-of-economic-analysis-bea-api-openapi.yml
-      - url: https://apps.bea.gov/API/signup/index.cfm
-        type: Signup
-    description: >-
-      The BEA Data API provides programmatic access to BEA's published economic statistics including GDP, national
-      income, personal income, corporate profits, international trade and investment, and industry accounts. Supports
-      multiple datasets including NIPA, Fixed Assets, ITA, IIP, GDPbyIndustry, Regional, and more.
-    x-features:
-      - National Income and Product Accounts (NIPA) data
-      - GDP by Industry datasets
-      - Regional economic data by state and metro area
-      - International Trade in Goods and Services (ITA)
-      - International Investment Position (IIP)
-      - Fixed Assets accounts
-      - Underlying Detail Tables
-      - API key authentication
-    x-use-cases:
-      - Economic research and analysis
-      - Financial modeling with GDP components
-      - Regional economic development planning
-      - International trade and investment analysis
-      - Academic and government research
-  - aid: bureau-of-economic-analysis:bea-gdp-data
-    name: BEA GDP Data
-    tags:
-      - Economics
-      - GDP
-      - Federal Government
-      - National Accounts
-    humanURL: https://www.bea.gov/data/gdp/gross-domestic-product
-    baseURL: https://apps.bea.gov/api/data
-    properties:
-      - url: https://www.bea.gov/data/gdp/gross-domestic-product
-        type: Documentation
-      - url: >-
-          https://apps.bea.gov/api/data?UserID=YOUR_KEY&method=GetData&DataSetName=NIPA&TableName=T10101&Frequency=Q&Year=X&ResultFormat=JSON
-        type: DataAPI
-    description: >-
-      Gross Domestic Product (GDP) data from the BEA, available quarterly and annually. Includes GDP growth rates, GDP
-      by expenditure components, and real vs. nominal GDP measures.
+- aid: bureau-of-economic-analysis:bea-gdp-data
+  name: BEA GDP Data
+  tags:
+  - Economics
+  - GDP
+  - Federal Government
+  - National Accounts
+  humanURL: https://www.bea.gov/data/gdp/gross-domestic-product
+  baseURL: https://apps.bea.gov/api/data
+  properties:
+  - url: https://www.bea.gov/data/gdp/gross-domestic-product
+    type: Documentation
+  - url: >-
+      https://apps.bea.gov/api/data?UserID=YOUR_KEY&method=GetData&DataSetName=NIPA&TableName=T10101&Frequency=Q&Year=X&ResultFormat=JSON
+    type: DataAPI
+  description: >-
+    Gross Domestic Product (GDP) data from the BEA, available quarterly and annually. Includes GDP growth
+    rates, GDP by expenditure components, and real vs. nominal GDP measures.
+- aid: >-
+    bureau-of-economic-analysis:bureau-of-economic-analysis-bureau-of-economic-analysis-bea-api-api
+  name: Bureau of Economic Analysis Bureau Of Economic Analysis (BEA) API API
+  description: >-
+    The Bureau Of Economic Analysis (BEA) API API from Bureau of Economic Analysis — 1 operation(s) for
+    bureau of economic analysis (bea) api.
+  humanURL: https://www.bea.gov/tools/
+  baseURL: https://apps.bea.gov/api/data
+  tags:
+  - Bureau Of Economic Analysis (BEA) API
+  properties:
+  - type: OpenAPI
+    url: openapi/bureau-of-economic-analysis-bureau-of-economic-analysis-bea-api-api-openapi.yml
+  - type: Documentation
+    url: https://www.bea.gov/tools/
+  - type: Reference
+    url: https://apps.bea.gov/API/docs/index.htm
+  - type: Signup
+    url: https://apps.bea.gov/API/signup/index.cfm
 common:
   - type: AgenticAccess
     url: agentic-access/bureau-of-economic-analysis-agentic-access.yml
