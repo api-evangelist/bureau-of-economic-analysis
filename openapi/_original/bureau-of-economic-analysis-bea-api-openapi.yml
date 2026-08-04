@@ -1,0 +1,83 @@
+openapi: 3.1.0
+info:
+  title: Bureau of Economic Analysis (BEA) API
+  version: 1.0.0
+  description: >-
+    The data API provides programmatic access to BEA published economic
+    statistics using industry-standard methods and procedures. BEA's data API
+    includes methods for retrieving a subset of our statistical data and the
+    meta-data that describes it. The data API and its documentation are for
+    programmers who are familiar with the concepts and techniques of retrieving
+    data from Web Services.
+servers:
+  - url: https://apps.bea.gov/api/data
+paths:
+  /:
+    get:
+      summary: Bureau of Economic Analysis Retrieve data from BEA API
+      parameters:
+        - name: UserID
+          in: query
+          required: true
+          schema:
+            type: string
+            description: Unique 36-character User ID for API access
+        - name: method
+          in: query
+          required: true
+          schema:
+            type: string
+            enum:
+              - GetDatasetList
+              - GetParameterList
+              - GetParameterValues
+              - GetData
+        - name: DatasetName
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Name of the dataset to retrieve
+        - name: ParameterName
+          in: query
+          required: false
+          schema:
+            type: string
+            description: Specific parameter for the dataset
+        - name: ResultFormat
+          in: query
+          required: false
+          schema:
+            type: string
+            enum:
+              - JSON
+              - XML
+            default: JSON
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: string
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  APIErrorCode:
+                    type: integer
+                  APIErrorDescription:
+                    type: string
+        '429':
+          description: Rate limit exceeded
+          headers:
+            Retry-After:
+              description: Time in seconds to wait before retrying
+              schema:
+                type: integer

@@ -1,0 +1,14 @@
+{
+  "provider": "bureau-of-economic-analysis",
+  "sources": [
+    "bureau-of-economic-analysis-bureau-of-economic-analysis-bea-api-api-openapi.yml"
+  ],
+  "outputs": [
+    "bureau-of-economic-analysis-bureau-of-economic-analysis-bea-api-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
