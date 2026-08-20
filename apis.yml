@@ -3,6 +3,13 @@ url: https://raw.githubusercontent.com/api-evangelist/bureau-of-economic-analysi
 name: Bureau of Economic Analysis
 tags:
   - Economics
+  - Federal-Government
+  - GDP
+  - National Accounts
+  - Statistics
+  - Trade
+tags_raw:
+  - Economics
   - Federal Government
   - GDP
   - National Accounts
@@ -36,6 +43,11 @@ apis:
 - aid: bureau-of-economic-analysis:bea-gdp-data
   name: BEA GDP Data
   tags:
+  - Economics
+  - GDP
+  - Federal-Government
+  - National Accounts
+  tags_raw:
   - Economics
   - GDP
   - Federal Government
