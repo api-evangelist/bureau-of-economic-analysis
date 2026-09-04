@@ -45,7 +45,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/bureau-of-
 access: 3rd-Party
 created: '2024-01-01'
 modified: '2026-05-19'
-position: Consumer
+position: Consuming
 description: >-
   The U.S. Bureau of Economic Analysis (BEA) is a principal federal statistical agency that produces accurate and
   objective data about the U.S. economy. BEA publishes GDP, personal income, corporate profits, international trade and
